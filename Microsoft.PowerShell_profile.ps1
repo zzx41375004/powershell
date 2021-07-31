@@ -20,7 +20,7 @@ Function f{
     }
     vifm
     if (Test-Path("C:\Users\magicPro\.config\vifm\lastdir")){
-        cat $DirPath | change.exe | cd
+        Get-Content $DirPath | change.exe | Set-Location
     }
 }
 
