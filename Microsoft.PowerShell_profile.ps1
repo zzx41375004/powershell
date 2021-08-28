@@ -13,14 +13,14 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
+$DirPath = "C:\Users\magicPro\.config\vifm\lastdir"
 Function f{
-    $DirPath = "C:\Users\magicPro\.config\vifm\lastdir"
     if (Test-Path($DirPath)){
         rm $DirPath
     }
     vifm
-    if (Test-Path("C:\Users\magicPro\.config\vifm\lastdir")){
-        Get-Content $DirPath | change.exe | Set-Location
+    if (Test-Path($DirPath)){
+        Get-Content $DirPath | C:\\bin\\change.exe | Set-Location
     }
 }
 
